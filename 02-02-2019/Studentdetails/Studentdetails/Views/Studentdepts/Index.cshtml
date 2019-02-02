@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Studentdetails.Models.Studentdept>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<p>
+    @Html.ActionLink("Add Subject", "index", "Studentinfoes")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Deptname)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Deptname)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.StudentdeptId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.StudentdeptId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.StudentdeptId })
+        </td>
+    </tr>
+}
+
+</table>
